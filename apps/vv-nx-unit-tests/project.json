@@ -1,0 +1,93 @@
+{
+  "projectType": "application",
+  "sourceRoot": "apps/vv-nx-unit-tests/src",
+  "prefix": "vv-nx-tests",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/vv-nx-unit-tests",
+        "index": "apps/vv-nx-unit-tests/src/index.html",
+        "main": "apps/vv-nx-unit-tests/src/main.ts",
+        "polyfills": "apps/vv-nx-unit-tests/src/polyfills.ts",
+        "tsConfig": "apps/vv-nx-unit-tests/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/vv-nx-unit-tests/src/favicon.ico",
+          "apps/vv-nx-unit-tests/src/assets"
+        ],
+        "styles": ["apps/vv-nx-unit-tests/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/vv-nx-unit-tests/src/environments/environment.ts",
+              "with": "apps/vv-nx-unit-tests/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "vv-nx-unit-tests:build:production"
+        },
+        "development": {
+          "browserTarget": "vv-nx-unit-tests:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "vv-nx-unit-tests:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/vv-nx-unit-tests/**/*.ts",
+          "apps/vv-nx-unit-tests/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/vv-nx-unit-tests"],
+      "options": {
+        "jestConfig": "apps/vv-nx-unit-tests/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

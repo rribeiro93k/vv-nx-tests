@@ -1,0 +1,14 @@
+.item {
+  display: block;
+
+  &:hover {
+    text-decoration: underline;
+    background-color: #eeeeee;
+  }
+
+  &__link {
+    width: 100%;
+    margin-left: 10px;
+    text-decoration: none;
+  }
+}

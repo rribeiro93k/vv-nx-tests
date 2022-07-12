@@ -5,7 +5,9 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/vv-nx-unit-tests",
         "index": "apps/vv-nx-unit-tests/src/index.html",
@@ -17,7 +19,10 @@
           "apps/vv-nx-unit-tests/src/favicon.ico",
           "apps/vv-nx-unit-tests/src/assets"
         ],
-        "styles": ["apps/vv-nx-unit-tests/src/styles.scss"],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/vv-nx-unit-tests/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -82,7 +87,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/vv-nx-unit-tests"],
+      "outputs": [
+        "coverage/apps/vv-nx-unit-tests"
+      ],
       "options": {
         "jestConfig": "apps/vv-nx-unit-tests/jest.config.ts",
         "passWithNoTests": true

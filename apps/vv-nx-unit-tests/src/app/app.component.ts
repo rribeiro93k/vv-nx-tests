@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'vv-nx-unit-tests';
+
+  toggleSidebar = false;
+
+  openSidebar(isOpen: boolean): void {
+    this.toggleSidebar = isOpen;
+  }
+
 }

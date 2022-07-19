@@ -8,7 +8,8 @@
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2020 browser module main",
     "start": "nx serve vv-nx-unit-tests",
     "build": "nx build",
-    "test": "nx test vv-nx-unit-tests"
+    "test": "nx test vv-nx-unit-tests",
+    "test:watch": "nx test vv-nx-unit-tests --watch-all"
   },
   "dependencies": {
     "@angular/animations": "~14.0.0",

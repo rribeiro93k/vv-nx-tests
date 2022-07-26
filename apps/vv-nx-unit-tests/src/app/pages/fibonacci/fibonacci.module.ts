@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { MatChipsModule } from '@angular/material/chips';
 import { RouterModule } from '@angular/router';
 import { FibonacciRoutingModule } from './fibonacci-routing.module';
 import { FibonacciComponent } from './fibonacci.component';
@@ -8,7 +9,8 @@ import { FibonacciComponent } from './fibonacci.component';
   imports: [
     CommonModule,
     RouterModule,
-    FibonacciRoutingModule
+    FibonacciRoutingModule,
+    MatChipsModule
   ],
   exports: [FibonacciComponent],
   declarations: [FibonacciComponent]

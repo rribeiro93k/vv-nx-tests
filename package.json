@@ -9,6 +9,7 @@
     "start": "nx serve vv-nx-unit-tests",
     "build": "nx build",
     "test": "nx test vv-nx-unit-tests",
+    "test:verbose": "nx test vv-nx-unit-tests --verbose",
     "test:watch": "nx test vv-nx-unit-tests --watch-all"
   },
   "dependencies": {

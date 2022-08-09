@@ -12,5 +12,4 @@ export class AppComponent {
   openSidebar(isOpen: boolean): void {
     this.toggleSidebar = isOpen;
   }
-
 }

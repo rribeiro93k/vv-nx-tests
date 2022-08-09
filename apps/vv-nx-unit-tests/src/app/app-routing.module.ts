@@ -5,6 +5,10 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./pages/home/home.modules').then(m => m.HomeModule)
+  },
+  {
+    path: 'fibonacci',
+    loadChildren: () => import('./pages/fibonacci/fibonacci.module').then(m => m.FibonacciModule)
   }
 ];
 

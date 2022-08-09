@@ -8,13 +8,13 @@ import { FibonacciService } from './fibonacci.service';
 })
 export class FibonacciComponent implements OnInit {
 
-  resultados?: number[];
+  results?: number[];
 
   constructor(
     private service: FibonacciService
   ) { }
 
   ngOnInit(): void {
-    this.resultados = this.service.getSequence(1, 21);
+    this.results = this.service.getSequence(1, 21);
   }
 }

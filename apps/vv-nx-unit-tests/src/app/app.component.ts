@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  projectName = 'VV-NX-UNIT-TESTS';
   toggleSidebar = false;
 
   openSidebar(isOpen: boolean): void {

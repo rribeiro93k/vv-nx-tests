@@ -1,0 +1,31 @@
+$vertical-spacing: 13px !default;
+$horizontal-spacing: 10px !default;
+$color-white: #ffffff !default;
+$background-color: #3f51b5 !default;
+
+.footer {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  width: 100%;
+  padding: {
+    top: $vertical-spacing;
+    bottom: $vertical-spacing;
+  }
+  background-color: $background-color;
+
+  p {
+    color: $color-white;
+  }
+
+  &__separator {
+    width: 7px;
+    height: 7px;
+    margin: {
+      right: $horizontal-spacing;
+      left: $horizontal-spacing;
+    }
+    border-radius: 100%;
+    background-color: $color-white;
+  }
+}

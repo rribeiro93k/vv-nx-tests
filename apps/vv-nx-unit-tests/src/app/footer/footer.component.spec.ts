@@ -3,17 +3,17 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { HeaderComponent } from './header.component';
+import { FooterComponent } from './footer.component';
 
-describe('Header', () => {
+describe('Footer', () => {
 
-  let fixture: ComponentFixture<HeaderComponent>;
-  let component: HeaderComponent;
+  let fixture: ComponentFixture<FooterComponent>;
+  let component: FooterComponent;
   let nativeElement: HTMLElement;
 
   beforeEach(async () => {
     TestBed.configureTestingModule({
-      declarations: [HeaderComponent],
+      declarations: [FooterComponent],
       imports: [
         CommonModule,
         MatIconModule,
@@ -22,26 +22,19 @@ describe('Header', () => {
       ]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(HeaderComponent);
+    fixture = TestBed.createComponent(FooterComponent);
     component = fixture.componentInstance;
     nativeElement = fixture.nativeElement;
   });
 
-  it('Header: Componente deve ser criado', () => {
+  it('Footer: Componente deve ser criado', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Header: Emitindo valor booleano igual a true', () => {
-    jest.spyOn(component.openSidebarEmitter, 'emit');
-    nativeElement.querySelector('button')?.dispatchEvent(new Event('click'));
-    fixture.detectChanges();
-    expect(component.openSidebarEmitter.emit).toHaveBeenCalledWith(true);
-  });
-
-  it('Header: Devo conter o título referente a aplicação', () => {
+  it('Footer: Devo conter o nome referente ao projeto', () => {
     component.projectName = 'VV-NX-UNIT-TESTS';
     fixture.detectChanges();
-    const textContent = nativeElement.querySelector('mat-toolbar > span')?.textContent;
+    const textContent = nativeElement.querySelector('footer > p')?.textContent;
     expect(textContent).toContain('VV-NX-UNIT-TESTS');
   });
 });

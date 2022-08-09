@@ -1,11 +1,14 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'header',
+  selector: 'vv-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+
+  @Input()
+  projectName!: string;
 
   @Output()
   openSidebarEmitter = new EventEmitter<boolean>();

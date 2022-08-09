@@ -10,7 +10,6 @@ describe('Fibonacci', () => {
   let service: FibonacciService;
   let fixture: ComponentFixture<FibonacciComponent>;
   let component: FibonacciComponent;
-  let nativeElement: HTMLElement;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -25,7 +24,6 @@ describe('Fibonacci', () => {
     service = TestBed.inject(FibonacciService);
     fixture = TestBed.createComponent(FibonacciComponent);
     component = fixture.componentInstance;
-    nativeElement = fixture.nativeElement;
   });
 
   it('Fibonacci: Componente deve ser criado', () => {
@@ -37,4 +35,9 @@ describe('Fibonacci', () => {
     expect(listNumbers).toEqual(expect.arrayContaining(sequenceFibonacci));
   });
 
+  it('Fibonacci: Valores da propriedade `results` deve corresponder com sequência Fibonacci após a execução inicial do componente', () => {
+    component.ngOnInit();
+    const results = component.results || [];
+    expect(results).toEqual(expect.arrayContaining(sequenceFibonacci));
+  });
 });

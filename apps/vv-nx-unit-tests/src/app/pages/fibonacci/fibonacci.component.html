@@ -1,0 +1,13 @@
+<mat-chip-list
+  *ngIf="results"
+  cdkDropList
+  cdkDropListOrientation="horizontal"
+>
+  <mat-chip
+    class="example-box"
+    cdkDrag
+    *ngFor="let result of results"
+  >
+    {{ result }}
+  </mat-chip>
+</mat-chip-list>

@@ -39,6 +39,7 @@ describe('Header', () => {
   });
 
   it('Header: Devo conter o título referente a aplicação', () => {
+    component.projectName = 'VV-NX-UNIT-TESTS';
     fixture.detectChanges();
     const textContent = nativeElement.querySelector('mat-toolbar > span')?.textContent;
     expect(textContent).toContain('VV-NX-UNIT-TESTS');
